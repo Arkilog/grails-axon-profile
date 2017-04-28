@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:${project.grailsVersion}"
+    }
+}
+
+apply plugin: "org.grails.grails-profile"
+apply plugin: "org.grails.grails-profile-publish"
+
+group 'org.grails.profiles'
+version '1.0.0-B01'
+
+grailsPublish {
+    // TODO: Provide values here
+    user = 'user'
+    key = 'key'
+    githubSlug = 'arkilog/grails-cqrs-profile'
+    license {
+        name = 'Apache-2.0'
+    }
+    title = "CQRS"
+    desc = "CQRS Profile"
+    developers = [yellowsnow:"Mehdi EL AOUFIR"]
+}
+
+repositories {
+    mavenLocal()
+    maven { url "https://repo.grails.org/grails/core" }
+}  
+
+dependencies {
+    runtime "org.grails.profiles:base:3.2.0.RC1"
+}
